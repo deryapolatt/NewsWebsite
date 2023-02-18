@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block baslik %} Haberler {% endblock %}
+
+{% block icerik %}
+<center><h1>Haber Sitemize Hoş Geldiniz</h1></center>
+
+ <div style="width:360px;margin-top:10px;margin-bottom:10px;position:relative;">
+<button onclick="window.location.href='/accounts/login'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;	padding: 10px 5px;	width:360px;	height:50px;	border: none;	cursor: pointer;	float:left;-webkit-box-shadow: 3px 3px 4px #000;">Giriş Yap</button>
+</div>
+<br>
+ <div style="width:360px;margin-top:10px;margin-bottom:10px;position:relative;">
+<button onclick="window.location.href='/accounts/register'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;	padding: 10px 5px;	width:360px;	height:50px;	border: none;	cursor: pointer;	float:left;-webkit-box-shadow: 3px 3px 4px #000;">Kayıt Ol</button>
+</div>
+<br>
+ <div style="width:360px;margin-top:10px;margin-bottom:10px;position:relative;">
+<button onclick="window.location.href='/accounts/logout'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;	padding: 10px 5px;	width:360px;	height:50px;	border: none;	cursor: pointer;	float:left;-webkit-box-shadow: 3px 3px 4px #000;">Çıkış Yap</button>
+</div>
+<br>
+<br>
+<div>
+        <div class="haberliste" style="margin-top:50px;">
+
+    <h3 style="width:100%;text-align:center;margin-bottom:-15px;margin-top:5px;padding:10px;">Haberler</h3>
+            <br>
+
+    <nav>
+    <ul>
+         {% for haber in haberler %}
+        <li >
+            <a href="{% url 'haberlerigoster' haber.id %}">{{haber.baslik}}</a>
+
+        </li>
+            {% endfor %}
+
+
+    </ul>
+    </nav>
+        </div>
+
+</div>
+<br><br>
+   <div style="width:360px;margin-top:10px;margin-bottom:10px;postion:relative;">
+<button onclick="window.location.href='/haber/haber-olustur'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;	padding: 10px 5px;	width:360px;	height:50px;	border: none;	cursor: pointer;	float:left;-webkit-box-shadow: 3px 3px 4px #000;">Haber Ekle</button>
+</div>
+<br><br>
+<div style="width:100%;float:left;margin-top:10px;"> Toplam girilen haber: {{thaber}}</div>
+
+{% endblock %}

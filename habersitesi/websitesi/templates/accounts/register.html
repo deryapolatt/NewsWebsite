@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block baslik %}Giriş{% endblock %}
+{% block icerik %}
+<h1>Haber girin</h1><hr/>
+ <div style="width:360px;">
+<button onclick="window.location.href='http://127.0.0.1:8000/'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;margin-bottom:20px;	padding: 10px 5px;	width:450px;	height:40px;	border: none;	cursor: pointer;	float:left;box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);">Ana Sayfa</button>
+</div>
+<br>
+<br>
+<form method="POST" enctype=multipart/form-data class="haberform" id="contact" style="margin-top:20px;">
+
+    {{form}}
+    {% csrf_token %}
+    <button type="submit" >Kayıt Ol</button>
+</form>
+
+
+{% endblock %}

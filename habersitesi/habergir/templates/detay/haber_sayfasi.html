@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{haber.baslik}}</title>
+</head>
+<body>
+<div>
+
+    <h3>{{haber.baslik}}</h3>
+    <h4>Kullanıcı: {{post.user.get_full_name}}</h4>
+
+    <p>{{haber.metin}}</p>
+    <img src="{{ haber.gorsel.url}}" style="width:400px;heigh:400px;">
+
+
+
+ <div style="width:360px;">
+<button onclick="window.location.href='http://127.0.0.1:8000/'" class="first anasayfabutton" style="margin-right: 0px;	margin-left:0px;margin-bottom:20px;	padding: 10px 5px;	width:400px;	height:40px;	border: none;	cursor: pointer;	float:left;box-shadow: 0 0 20px 0 rgb(0 0 0 / 20%), 0 5px 5px 0 rgb(0 0 0 / 24%);">Ana Sayfa</button>
+</div>
+
+
+</div>
+
+</body>
+</html>
